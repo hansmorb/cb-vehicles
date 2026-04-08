@@ -1,4 +1,4 @@
-=== CommonsBooking -  Bikes And Trailers ===
+=== CommonsBooking - Vehicles ===
 Contributors: hansmorb
 Donate link: https://example.com/
 Tags: comments, spam
@@ -9,7 +9,7 @@ Stable tag: 0.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-An extension for CommonsBooking (>=2.0) to facilitate cargo bike, bicycle and bicycle trailer rentals.
+An extension for CommonsBooking (>=2.9.2) to facilitate vehicle rental.
 
 == Description ==
 
