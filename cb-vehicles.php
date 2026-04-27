@@ -2,7 +2,7 @@
 /**
  * Plugin Name:     CommonsBooking - Vehicles
  * Plugin URI:      https://github.com/hansmorb/cb-vehicles
- * Description:     An extension for CommonsBooking (>=2.9.2) to facilitate vehicle rental.
+ * Description:     An extension for CommonsBooking (>=2.11) to facilitate vehicle rental.
  * Author:          hansmorb
  * Author URI:      https://profiles.wordpress.org/hansmorb/
  * Text Domain:     cb-vehicles

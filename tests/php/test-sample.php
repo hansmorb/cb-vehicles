@@ -2,7 +2,7 @@
 /**
  * Class SampleTest
  *
- * @package Cb_Bikes_And_Trailers
+ * @package Cb_Vehicles
  */
 
 /**

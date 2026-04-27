@@ -13,10 +13,15 @@ An extension for CommonsBooking (>=2.9.2) to facilitate vehicle rental.
 
 == Description ==
 
-This is the long description.  No limit, and you can use Markdown (as well as in the following sections).
+This plugin provides you with additional fields to manage your fleet of vehicles in CommonsBooking.
+You can set the type of vehicle and add technical specifications. From these fields, you can
+- automatically generate a beautiful frontend overview for the users
+- provide the data using the GBFS API
+- include them in your booking and e-mail templates
 
-For backwards compatibility, if this section is missing, the full length of the short description will be used, and
-Markdown parsed.
+Includes support for trailer hitches, so you can find a suitable bike for your trailer and vice versa.
+This plugin only works with the latest version of CommonsBooking (>=2.11) and is not compatible with older versions.
+
 
 A few notes about the sections above:
 

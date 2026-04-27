@@ -2,7 +2,7 @@
 /**
  * PHPUnit bootstrap file.
  *
- * @package Cb_Bikes_And_Trailers
+ * @package CB_vehicles
  */
 
 if ( PHP_MAJOR_VERSION >= 8 ) {
@@ -28,7 +28,7 @@ require_once "{$_tests_dir}/includes/functions.php";
  * Manually load the plugin being tested.
  */
 function _manually_load_plugin() {
-	require dirname( dirname( __FILE__ ) ) . '/cb-bikes-and-trailers.php';
+	require dirname( dirname( __FILE__ ) ) . '/cb-vehicles.php';
 }
 
 tests_add_filter( 'muplugins_loaded', '_manually_load_plugin' );
