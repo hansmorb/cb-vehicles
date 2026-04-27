@@ -293,7 +293,7 @@ class Item {
 					'url' => false, //hide the text input for the url
 				),
 				'query_args' => array(
-					// only allow gif, jpg, or png images
+					// only allow GIF, JPG, or PNG images
 					 'type' => array(
 					     'image/gif',
 					     'image/jpeg',
