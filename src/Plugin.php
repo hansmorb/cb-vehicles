@@ -2,12 +2,13 @@
 /**
  * Initialize the plugin.
  *
- * @package CBBikesAndTrailers
+ * @package CB_Vehicles
  */
 
 namespace CBVehicles;
 
 use CBVehicles\WordPress\CustomPostType\Item;
+use CommonsBooking\Wordpress\Options\OptionsTab;
 
 /**
  * The main class of the plugin.
@@ -26,6 +27,8 @@ class Plugin {
 	 */
 	public static function init() {
 		$plugin = self::get_instance();
+
+		//initialize item metaboxes
 		add_filter( 'commonsbooking_custom_metadata', function ( $metadata )
 		{
 			if (! array_key_exists('item',$metadata)  || ! is_array( $metadata['item'])) {
@@ -35,6 +38,15 @@ class Plugin {
 				return array('item' => array_merge($metadata['item'], Item::getMetaboxes()));
 			}
 		});
+		//initialize backend settings page
+		add_action( 'init', function () use ($plugin) {
+			$options_array = include CB_VEHICLES_PATH . '/includes/OptionsArray.php';
+			foreach ( $options_array as $tab_id => $tab ) {
+				new OptionsTab( $tab_id, $tab );
+			}
+		},40);
+
+
 	}
 
 	/**
