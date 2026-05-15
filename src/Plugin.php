@@ -7,16 +7,24 @@
 
 namespace CBVehicles;
 
+use CBVehicles\API\GBFS\StationStatus;
+use CBVehicles\API\GBFS\VehicleAvailability;
+use CBVehicles\API\GBFS\VehicleStatus;
+use CBVehicles\API\GBFS\VehicleTypes;
 use CBVehicles\WordPress\CustomPostType\Item;
+use CommonsBooking\Settings\Settings;
 use CommonsBooking\Wordpress\Options\OptionsTab;
+use function PHPUnit\Framework\stringContains;
 
 /**
  * The main class of the plugin.
  */
+if ( ! defined( 'ABSPATH' ) ) exit;
 class Plugin {
 
 	/**
 	 * The single instance of the class.
+	 *
 	 *
 	 * @var \CBVehicles\Plugin|null
 	 */
@@ -46,7 +54,42 @@ class Plugin {
 			}
 		},40);
 
+		//add vehicle availability route to discover feed
+		add_filter('commonsbooking_gbfs_feeds', function ( $feeds ) {
+			$feeds[] = 'vehicle_types';
+			return $feeds;
+		});
 
+		add_action(
+			'rest_api_init',
+		function () {
+			$route = new VehicleTypes();
+			$route->register_routes();
+		},15);
+
+		//add vehicletypes to other routes
+		add_filter( 'rest_request_after_callbacks', function( $response, $handler, $request) {
+			if (str_ends_with($request->get_route(), 'station_status.json')) {
+				return StationStatus::addVehicleTypes($response);
+			}
+			elseif (str_ends_with($request->get_route(), 'vehicle_status.json')) {
+				return VehicleStatus::addVehicleTypes($response);
+			}
+			elseif (str_ends_with($request->get_route(), 'vehicle_availability.json')) {
+				return VehicleAvailability::addVehicleTypes($response);
+			}
+			else {
+				return $response;
+			}
+		},10,3);
+
+		if (Settings::getOption('commonsbooking_options_cb_vehicles', 'frontend_enabled' ) == "on") {
+			add_action('commonsbooking_before_item-single', function () {
+				wp_enqueue_script(CB_VEHICLES_TRANSLATION_DOMAIN . "_js" , CB_VEHICLES_PLUGIN_URL . '/assets/js/accordion.js');
+				wp_enqueue_style(CB_VEHICLES_TRANSLATION_DOMAIN . '_css', CB_VEHICLES_PLUGIN_URL . '/assets/css/accordion.css');
+				include CB_VEHICLES_PATH . '/templates/item.php';
+			});
+		}
 	}
 
 	/**
