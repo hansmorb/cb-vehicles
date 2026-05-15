@@ -17,47 +17,28 @@ class Item {
 		return [
 			//GBFS field (required)
 			[
-				'name'       => self::esc__( 'Form factor' ),
-				'desc'       => self::esc__('The item\'s general form factor. ' ),
+				'name'       => esc_html__( 'Form factor (required)', 'cb-vehicles' ),
+				'desc'       => esc_html__('The item\'s general form factor.', 'cb-vehicles' ),
 				'id'         => CB_VEHICLES_METABOX_PREFIX . 'form_factor',
 				'type'       => 'select',
-				'options'	 => array(
-					'cargo_bicycle' => self::esc__( 'Cargo bike' ),
-					'bicycle' => self::esc__( 'Bicycle' ),
-					'bicycle_trailer' => self::esc__( 'Bicycle trailer' ), //not part of the GBFS standard, will report as other
-					'adaptive_bicycle' => self::esc__( 'Adaptive bike' ), //not part of the GBFS standard, will report as other
-					'moped' => self::esc__( 'Moped' ),
-					'scooter_standing' => self::esc__( 'Scooter with rider standing up' ),
-					'scooter_seated' => self::esc__( 'Scooter with rider seated'),
-					'car'              => self::esc__( 'Car' ),
-					'other' => self::esc__( 'Other' )
-				),
-				'show_option_none' => false,
-				'default'     => 'cargo_bicycle'
+				'options'	 => self::getFormFactors(),
+				'show_option_none' => true,
+				'default'     => 'none'
 			],
 			//GBFS field (required)
 			[
-				'name'       => self::esc__( 'Propulsion type'),
-				'desc'       => self::esc__( 'The primary propulsion type of the vehicle.'),
+				'name'       => esc_html__( 'Propulsion type (required)', 'cb-vehicles' ),
+				'desc'       => esc_html__( 'The primary propulsion type of the vehicle.', 'cb-vehicles' ),
 				'id' 	     => CB_VEHICLES_METABOX_PREFIX . 'propulsion_type',
 				'type'       => 'select',
-				'options'	 => array(
-					'human' => self::esc__( 'Human powered'),
-					'electric_assist' => self::esc__( 'Electric assist'),
-					'electric' => self::esc__( 'Electric (throttle)'),
-					'combustion' => self::esc__( 'Gasoline Combustion Engine'),
-					'combustion_diesel' => self::esc__( 'Diesel Combustion Engine'),
-					'hybrid' => self::esc__( 'Hybrid (Combustion engine / electric motor'),
-					'plug_in_hybrid' => self::esc__( 'Plug-in hybrid'),
-					'hydrogel_fuel_cell' => self::esc__( 'Hydrogel fuel cell')
-				),
-				'show_option_none' => false,
-				'default'     => 'human'
+				'options'	 => self::getPropulsionTypes(),
+				'show_option_none' => true,
+				'default'     => 'none'
 			],
 			//GBFS field: Conditionally required when a motor is installed
 			[
-				'name'       => self::esc__( 'Range (meters)' ),
-				'desc'       => self::esc__( 'The range the vehicle can travel with a full charge / tank.'),
+				'name'       => esc_html__( 'Range (meters) (required when using a motor)' , 'cb-vehicles' ),
+				'desc'       => esc_html__( 'The range the vehicle can travel with a full charge / tank.', 'cb-vehicles' ),
 				'id'         => CB_VEHICLES_METABOX_PREFIX . 'max_range_meters',
 				'type'       => 'text_small',
 				'attributes' => array(
@@ -68,8 +49,8 @@ class Item {
 			],
 			//GBFS field (optional)
 			[
-				'name'       => self::esc__( 'Wheel count' ),
-				'desc'       => self::esc__( 'Number of wheels this vehicle has' ),
+				'name'       => esc_html__( 'Wheel count' , 'cb-vehicles' ),
+				'desc'       => esc_html__( 'Number of wheels this vehicle has' , 'cb-vehicles' ),
 				'id'         => CB_VEHICLES_METABOX_PREFIX . 'wheel_count',
 				'type'       => 'text_small',
 				'attributes' => array(
@@ -80,8 +61,8 @@ class Item {
 			],
 			//GBFS field (optional)
 			[
-				'name'       => self::esc__( 'Max permitted speed (km/h)'),
-				'desc'       => self::esc__( 'The maximum speed in kilometers per hour this vehicle is permitted to reach in accordance with local permit and regulations. '),
+				'name'       => esc_html__( 'Max permitted speed (km/h)', 'cb-vehicles' ),
+				'desc'       => esc_html__( 'The maximum speed in kilometers per hour this vehicle is permitted to reach in accordance with local permit and regulations. ', 'cb-vehicles' ),
 				'id'         => CB_VEHICLES_METABOX_PREFIX . 'max_permitted_speed',
 				'type'       => 'text_small',
 				'attributes' => array(
@@ -92,8 +73,8 @@ class Item {
 			],
 			//GBFS field (optional)
 			[
-				'name'       => self::esc__( 'Cargo volume capacity (l)'),
-				'desc'       => self::esc__( 'Cargo volume available in the vehicle, expressed in liters. For cars, it corresponds to the space between the boot floor, including the storage under the hatch, to the rear shelf in the trunk.'),
+				'name'       => esc_html__( 'Cargo volume capacity (l)', 'cb-vehicles' ),
+				'desc'       => esc_html__( 'Cargo volume available in the vehicle, expressed in liters. For cars, it corresponds to the space between the boot floor, including the storage under the hatch, to the rear shelf in the trunk.', 'cb-vehicles' ),
 				'id'         => CB_VEHICLES_METABOX_PREFIX . 'cargo_volume_capacity',
 				'type'       => 'text_small',
 				'attributes' => array(
@@ -104,8 +85,8 @@ class Item {
 			],
 			//GBFS field (optional)
 			[
-				'name'       => self::esc__( 'Cargo load capacity (kg)'),
-				'desc'       => self::esc__( 'The capacity of the vehicle cargo space (excluding passengers), expressed in kilograms.' ),
+				'name'       => esc_html__( 'Cargo load capacity (kg)', 'cb-vehicles' ),
+				'desc'       => esc_html__( 'The capacity of the vehicle cargo space (excluding passengers), expressed in kilograms.' , 'cb-vehicles' ),
 				'id'         => CB_VEHICLES_METABOX_PREFIX . 'cargo_load_capacity',
 				'type'       => 'text_small',
 				'attributes' => array(
@@ -116,8 +97,8 @@ class Item {
 			],
 			//optional
 			[
-				'name'      => self::esc__( 'Empty weight (kg)'),
-				'desc'      => self::esc__ ('The weight of the vehicle when it is empty.'),
+				'name'      => esc_html__( 'Empty weight (kg)', 'cb-vehicles' ),
+				'desc'      => esc_html__ ('The weight of the vehicle when it is empty.', 'cb-vehicles' ),
 				'id'         => CB_VEHICLES_METABOX_PREFIX . 'empty_weight',
 				'type'       => 'text_small',
 				'attributes' => array(
@@ -128,8 +109,8 @@ class Item {
 			],
 			//optional
 			[
-				'name'       => self::esc__( 'Length (cm)'),
-				'desc'       => self::esc__ ('The minimum length of the vehicle. For trailers, the length with the trailer drawbar folded in.'),
+				'name'       => esc_html__( 'Length (cm)', 'cb-vehicles' ),
+				'desc'       => esc_html__ ('The minimum length of the vehicle. For trailers, the length with the trailer drawbar folded in.', 'cb-vehicles' ),
 				'id'         => CB_VEHICLES_METABOX_PREFIX . 'length',
 				'type'       => 'text_small',
 				'attributes' => array(
@@ -138,9 +119,10 @@ class Item {
 					'min'     => '1'
 				)
 			],
+			//optional
 			[
-				'name'       => self::esc__( 'Width (cm)'),
-				'desc'       => self::esc__ ('The width of the vehicle at its widest point.'),
+				'name'       => esc_html__( 'Width (cm)', 'cb-vehicles' ),
+				'desc'       => esc_html__ ('The width of the vehicle at its widest point.', 'cb-vehicles' ),
 				'id'         => CB_VEHICLES_METABOX_PREFIX . 'width',
 				'type'       => 'text_small',
 				'attributes' => array(
@@ -151,8 +133,8 @@ class Item {
 			],
 			//optional
 			[
-				'name'       => self::esc__( 'Loading area length (cm)'),
-				'desc'       => self::esc__( 'The length of just the loading area'),
+				'name'       => esc_html__( 'Loading area length (cm)', 'cb-vehicles' ),
+				'desc'       => esc_html__( 'The length of just the loading area', 'cb-vehicles' ),
 				'id'         => CB_VEHICLES_METABOX_PREFIX . 'loading_area_length',
 				'type'       => 'text_small',
 				'attributes' => array(
@@ -163,8 +145,8 @@ class Item {
 			],
 			//optional
 			[
-				'name'       => self::esc__( 'Loading area width (cm)'),
-				'desc'       => self::esc__( 'The width of just the loading area'),
+				'name'       => esc_html__( 'Loading area width (cm)', 'cb-vehicles' ),
+				'desc'       => esc_html__( 'The width of just the loading area', 'cb-vehicles' ),
 				'id'         => CB_VEHICLES_METABOX_PREFIX . 'loading_area_width',
 				'type'       => 'text_small',
 				'attributes' => array(
@@ -175,59 +157,44 @@ class Item {
 			],
 			//optional (only for bicycle,cargo_bicycle)
 			[
-				'name'       => self::esc__( 'Adjustable seat post?'),
-				'desc'       => self::esc__ ('Is the seat post adjustable?'),
+				'name'       => esc_html__( 'Adjustable seat post?', 'cb-vehicles' ),
+				'desc'       => esc_html__ ('Is the seat post adjustable?', 'cb-vehicles' ),
 				'id'         => CB_VEHICLES_METABOX_PREFIX . 'seat_post_adjustable',
 				'type'       => 'checkbox'
 			],
 			//optional (only for bicycle,cargo_bicycle)
 			[
-				'name'       => self::esc__( 'Handlebar adjustable?'),
-				'desc'       => self::esc__ ('Is the handlebar adjustable?'),
+				'name'       => esc_html__( 'Handlebar adjustable?', 'cb-vehicles' ),
+				'desc'       => esc_html__ ('Is the handlebar adjustable?', 'cb-vehicles' ),
 				'id'         => CB_VEHICLES_METABOX_PREFIX . 'handlebar_adjustable',
 				'type'       => 'checkbox'
 			],
 			//optional, right now only for bicycle, cargo_bicyle and bicycle_trailer
 			[
-				'name' => self::esc__('Hitches'),
-				'desc' => self::esc__ ('The hitches attached to the vehicle.'),
+				'name' => esc_html__('Hitches', 'cb-vehicles' ),
+				'desc' => esc_html__ ('The hitches attached to the vehicle.', 'cb-vehicles' ),
 				'id'   => CB_VEHICLES_METABOX_PREFIX . 'hitches',
 				'type' => 'group',
 				'repeatable' => true,
 				'options' => array(
-					'group_title' => self::esc__( 'Hitch {#}'),
-					'add_button'  => self::esc__( 'Add hitch'),
-					'remove_button' => self::esc__( 'Remove hitch'),
+					'group_title' => esc_html__( 'Hitch {#}', 'cb-vehicles' ),
+					'add_button'  => esc_html__( 'Add hitch', 'cb-vehicles' ),
+					'remove_button' => esc_html__( 'Remove hitch', 'cb-vehicles' ),
 				),
 				'fields' => array(
 						array(
-						'name'       => self::esc__( 'Hitch type'),
-						'desc'       => self::esc__ ('What kind of trailer hitch is used by the vehicle?'),
+						'name'       => esc_html__( 'Hitch type', 'cb-vehicles' ),
+						'desc'       => esc_html__ ('What kind of trailer hitch is used by the vehicle? This is used to find compatible trailers for the item.', 'cb-vehicles' ),
 						'id'         => CB_VEHICLES_METABOX_PREFIX . 'hitch_make',
 						'type'       => 'select',
-						'options'    => array(
-							'aevon'  => self::esc__( 'Aevon®' ),
-							'burley' => self::esc__( 'Burley®' ),
-							'burley_travoy' => self::esc__( 'Burley Travoy®' ),
-							'bob'     => self::esc__( 'Bob®' ),
-							'croozer' => self::esc__( 'Croozer®' ),
-							'croozer_old' => self::esc__( 'Croozer® (pre 2016)' ),
-							'extrawheel' => self::esc__( 'Extrawheel®' ),
-							'hamax'     => self::esc__( 'Hamax®' ),
-							'haerry'     => self::esc__( 'Haerry' ),
-							'hebie'     => self::esc__( 'Hebie®' ),
-							'leggero' => self::esc__( 'Leggero®' ),
-							'qeridoo'   => self::esc__( 'Qeridoo®' ),
-							'thule'     => self::esc__('Thule®'),
-							'tout_terrain' => self::esc__('Tout Terrain®'),
-							'used'          => self::esc__('USED® (Carry Freedom)'),
-							'weber'         => self::esc__('Weber®')
-						)
+						'show_option_none' => true,
+						'default'   => 'none',
+						'options'    => self::getHitches()
 						),
 						//optional, only for bicycle, cargo_bicycle. Can hide trailers, when empty_weight + cargo_load_capacity exceeds capacity
 						array (
-							'name'       => self::esc__( 'Hitch maximum towing capacity (kg)'),
-							'desc'       => self::esc__ ('The maximum towing capacity that the hitch is rated for in kilograms.'),
+							'name'       => esc_html__( 'Hitch maximum towing capacity (kg)', 'cb-vehicles' ),
+							'desc'       => esc_html__ ('The maximum towing capacity that the hitch is rated for in kilograms.', 'cb-vehicles' ),
 							'id'         => CB_VEHICLES_METABOX_PREFIX . 'hitch_capacity',
 							'type'       => 'text_small',
 							'attributes' => array(
@@ -240,22 +207,22 @@ class Item {
 			],
 			//GBFS field(optional)
 			[
-				'name'       => self::esc__( 'Make'),
-				'desc'       => self::esc__ ('The name of the vehicle manufacturer'),
+				'name'       => esc_html__( 'Make', 'cb-vehicles' ),
+				'desc'       => esc_html__ ('The name of the vehicle manufacturer', 'cb-vehicles' ),
 				'id'         => CB_VEHICLES_METABOX_PREFIX . 'make',
 				'type'       => 'text'
 			],
 			//GBFS field(optional)
 			[
-				'name'       => self::esc__( 'Model'),
-				'desc'       => self::esc__ ('The name of the vehicle model'),
+				'name'       => esc_html__( 'Model', 'cb-vehicles' ),
+				'desc'       => esc_html__ ('The name of the vehicle model', 'cb-vehicles' ),
 				'id'         => CB_VEHICLES_METABOX_PREFIX . 'model',
 				'type'       => 'text'
 			],
 			//optional
 			[
-				'name'       => self::esc__( 'Gallery'),
-				'desc'       => self::esc__ ('Additional pictures of the vehicle. Will be displayed in a gallery.'),
+				'name'       => esc_html__( 'Gallery', 'cb-vehicles' ),
+				'desc'       => esc_html__ ('Additional pictures of the vehicle. Will be displayed in a gallery.', 'cb-vehicles' ),
 				'id'         => CB_VEHICLES_METABOX_PREFIX . 'gallery',
 				'type'       => 'file_list',
 				'query_args' => array(
@@ -263,7 +230,8 @@ class Item {
 				)
 			],
 			//GBFS field (optional)
-			//TODO: hidden, because cb only supports roundtrip stations as of now
+			//cb only supports roundtrip stations as of now
+			/*
 			[
 				'name'       => self::esc__( 'Return constraint'),
 				'desc'       => self::esc__( 'The conditions for returning the vehicle at the end of the rental.'),
@@ -278,15 +246,18 @@ class Item {
 					'hybrid' => self::esc__( 'Hybrid')
 				),
 			],
+			*/
+			//optional
 			[
-				'name'       => self::esc__( 'Owner' ),
-				'desc'       => self::esc__ ('Who is renting out the vehicle?'),
+				'name'       => esc_html__( 'Owner' , 'cb-vehicles' ),
+				'desc'       => esc_html__ ('Who is the owner of the vehicle? Some owners want their name displayed, do this here. USually company or sponsor.', 'cb-vehicles' ), //TODO: Reword
 				'id'         => CB_VEHICLES_METABOX_PREFIX . 'owner',
 				'type'       => 'text'
 			],
+			//optional
 			[
-				'name'       => self::esc__( 'Owner logo' ),
-				'desc'       => self::esc__ ('An image representative of the lessor.'),
+				'name'       => esc_html__( 'Owner logo' , 'cb-vehicles' ),
+				'desc'       => esc_html__ ('An image representative of the lessor. This is usually a company logo. It will be displayed right alongside the name of the owner.', 'cb-vehicles' ),
 				'id'         => CB_VEHICLES_METABOX_PREFIX . 'owner_image',
 				'type'       => 'file',
 				'options'    => array(
@@ -306,8 +277,63 @@ class Item {
 
 	}
 
-	private static function esc__ ( $string ): string
+	/**
+	 * @return array
+	 */
+	public static function getPropulsionTypes(): array
 	{
-		return esc_html__( $string, CB_VEHICLES_TRANSLATION_DOMAIN );
+		return array(
+			'human' => esc_html__('Human powered', 'cb-vehicles' ),
+			'electric_assist' => esc_html__('Electric assist', 'cb-vehicles' ),
+			'electric' => esc_html__('Electric (throttle)', 'cb-vehicles' ),
+			'combustion' => esc_html__('Gasoline Combustion Engine', 'cb-vehicles' ),
+			'combustion_diesel' => esc_html__('Diesel Combustion Engine', 'cb-vehicles' ),
+			'hybrid' => esc_html__('Hybrid (Combustion engine / electric motor', 'cb-vehicles' ),
+			'plug_in_hybrid' => esc_html__('Plug-in hybrid', 'cb-vehicles' ),
+			'hydrogel_fuel_cell' => esc_html__('Hydrogel fuel cell', 'cb-vehicles' )
+		);
+	}
+
+	/**
+	 * @return array
+	 */
+	public static function getFormFactors(): array
+	{
+		return array(
+			'cargo_bicycle' => esc_html__('Cargo bike', 'cb-vehicles' ),
+			'bicycle' => esc_html__('Bicycle', 'cb-vehicles' ),
+			'bicycle_trailer' => esc_html__('Bicycle trailer', 'cb-vehicles' ), //not part of the GBFS standard, will report as other
+			'adaptive_bicycle' => esc_html__('Adaptive bike', 'cb-vehicles' ), //not part of the GBFS standard, will report as other
+			'moped' => esc_html__('Moped', 'cb-vehicles' ),
+			'scooter_standing' => esc_html__('Scooter with rider standing up', 'cb-vehicles' ),
+			'scooter_seated' => esc_html__('Scooter with rider seated', 'cb-vehicles' ),
+			'car' => esc_html__('Car', 'cb-vehicles' ),
+			'other' => esc_html__('Other', 'cb-vehicles' )
+		);
+	}
+
+	/**
+	 * @return array
+	 */
+	public static function getHitches(): array
+	{
+		return array(
+			'aevon' => 'Aevon®',
+			'burley' => 'Burley®',
+			'burley_travoy' => 'Burley Travoy®',
+			'bob' => 'Bob®',
+			'croozer' => 'Croozer®',
+			'croozer_old' => esc_html__('Croozer® (pre 2016)', 'cb-vehicles' ),
+			'extrawheel' => 'Extrawheel®',
+			'hamax' => 'Hamax®',
+			'haerry' => 'Haerry',
+			'hebie' => 'Hebie®',
+			'leggero' => 'Leggero®',
+			'qeridoo' => 'Qeridoo®',
+			'thule' => 'Thule®',
+			'tout_terrain' => 'Tout Terrain®',
+			'used' => 'USED® (Carry Freedom)',
+			'weber' => 'Weber®'
+		);
 	}
 }
