@@ -10,7 +10,7 @@ module.exports = function ( grunt ) {
 
 			addtextdomain: {
 				options: {
-					textdomain: 'cb-bikes-and-trailers',
+					textdomain: 'cb-vehicles',
 				},
 				update_all_domains: {
 					options: {
@@ -25,8 +25,8 @@ module.exports = function ( grunt ) {
 					options: {
 						domainPath: '/languages',
 						exclude: [ '\.git/*', 'bin/*', 'node_modules/*', 'tests/*', 'wp-core/*' ],
-						mainFile: 'cb-bikes-and-trailers.php',
-						potFilename: 'cb-bikes-and-trailers.pot',
+						mainFile: 'cb-vehicles.php',
+						potFilename: 'cb-vehicles.pot',
 						potHeaders: {
 							poedit: true,
 							'x-poedit-keywordslist': true

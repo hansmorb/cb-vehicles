@@ -1,7 +1,7 @@
 {
-  "name": "cb-bikes-and-trailers",
+  "name": "cb-vehicles",
   "version": "0.1.0",
-  "description": " An extension for CommonsBooking (>=2.0) to facilitate cargobike, bicycle and bicycle trailer rentals ",
+  "description": " An extension for CommonsBooking (>=2.11) to facilitate cargobike, bicycle and bicycle trailer rentals ",
   "main": "Gruntfile.js",
   "scripts": {
     "install-dev": "bin/install-dev-dependencies.sh",
@@ -20,14 +20,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hansmorb/cb-bikes-and-trailers.git"
+    "url": "git+https://github.com/hansmorb/cb-vehicles.git"
   },
   "author": "Hans Morbach",
   "license": "GPL-2.0",
   "bugs": {
-    "url": "https://github.com/hansmorb/cb-bikes-and-trailers/issues"
+    "url": "https://github.com/hansmorb/cb-vehicles/issues"
   },
-  "homepage": "https://github.com/hansmorb/cb-bikes-and-trailers#readme",
+  "homepage": "https://github.com/hansmorb/cb-vehicles#readme",
   "devDependencies": {
     "@10up/cypress-wp-utils": "^0.2.0",
     "@wordpress/env": "^8.9.0",

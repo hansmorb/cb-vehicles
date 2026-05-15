@@ -5,7 +5,7 @@
   "env": {
     "tests": {
       "mappings": {
-        "wp-content/plugins/cb-bikes-and-trailers": ".",
+        "wp-content/plugins/cb-vehicles": ".",
         "wp-cli.yml": "./tests/bin/wp-cli.yml"
       }
     }

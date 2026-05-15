@@ -5,7 +5,7 @@ describe("Admin can login and open dashboard", () => {
 
   afterEach(() => {
     cy.activatePlugin("commonsbooking");
-    cy.activatePlugin("commonsbooking-bikes-and-trailers");
+    cy.activatePlugin("cb-vehicles");
   });
 
   it("Open dashboard", () => {
