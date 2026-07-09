@@ -54,18 +54,12 @@ class Plugin {
 			}
 		},40);
 
-		//add vehicle availability route to discover feed
-		add_filter('commonsbooking_gbfs_feeds', function ( $feeds ) {
-			$feeds[] = 'vehicle_types';
-			return $feeds;
-		});
-
 		add_action(
 			'rest_api_init',
 		function () {
 			$route = new VehicleTypes();
 			$route->register_routes();
-		},15);
+		},5);
 
 		//add vehicletypes to other routes
 		add_filter( 'rest_request_after_callbacks', function( $response, $handler, $request) {

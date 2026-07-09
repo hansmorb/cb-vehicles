@@ -2,7 +2,6 @@
 
 namespace CBVehicles\API\GBFS;
 
-//only makes sense after merging #2153
 use CommonsBooking\Repository\Item;
 use CommonsBooking\Settings\Settings;
 
@@ -11,7 +10,7 @@ class VehicleTypes extends \CommonsBooking\API\GBFS\BaseRoute
 
 	const SCHEMA_PATH = CB_VEHICLES_PLUGIN_DIR . 'includes/gbfs-json-schema/';
 	protected $rest_base = 'vehicle_types.json';
-	protected $schemaUrl = self::SCHEMA_PATH . 'vehicle_types.json';
+	protected $schemaUrl = COMMONSBOOKING_PLUGIN_DIR . 'includes/gbfs-json-schema/vehicle_types.json';
 
 
 	/**

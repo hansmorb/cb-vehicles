@@ -17,8 +17,8 @@ class Item {
 		return [
 			//GBFS field (required)
 			[
-				'name'       => esc_html__( 'Form factor (required)', 'cb-vehicles' ),
-				'desc'       => esc_html__('The item\'s general form factor.', 'cb-vehicles' ),
+				'name'       => esc_html__( 'Form factor', 'cb-vehicles' ),
+				'desc'       => esc_html__('The item\'s general form factor. When none is defined the defaults from the settings will be used.', 'cb-vehicles' ),
 				'id'         => CB_VEHICLES_METABOX_PREFIX . 'form_factor',
 				'type'       => 'select',
 				'options'	 => self::getFormFactors(),
@@ -27,8 +27,8 @@ class Item {
 			],
 			//GBFS field (required)
 			[
-				'name'       => esc_html__( 'Propulsion type (required)', 'cb-vehicles' ),
-				'desc'       => esc_html__( 'The primary propulsion type of the vehicle.', 'cb-vehicles' ),
+				'name'       => esc_html__( 'Propulsion type', 'cb-vehicles' ),
+				'desc'       => esc_html__( 'The primary propulsion type of the vehicle. When none is defined the defaults from the settings will be used.', 'cb-vehicles' ),
 				'id' 	     => CB_VEHICLES_METABOX_PREFIX . 'propulsion_type',
 				'type'       => 'select',
 				'options'	 => self::getPropulsionTypes(),
@@ -38,7 +38,7 @@ class Item {
 			//GBFS field: Conditionally required when a motor is installed
 			[
 				'name'       => esc_html__( 'Range (meters) (required when using a motor)' , 'cb-vehicles' ),
-				'desc'       => esc_html__( 'The range the vehicle can travel with a full charge / tank.', 'cb-vehicles' ),
+				'desc'       => esc_html__( 'The range the vehicle can travel with a full charge / tank. When none is defined the defaults from the settings will be used.', 'cb-vehicles' ),
 				'id'         => CB_VEHICLES_METABOX_PREFIX . 'max_range_meters',
 				'type'       => 'text_small',
 				'attributes' => array(
