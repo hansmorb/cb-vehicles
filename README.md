@@ -26,11 +26,17 @@ This plugin only works with the latest version of CommonsBooking (>=2.11) and is
 
 This section describes how to install the plugin and get it working.
 
-e.g.
-
 1. Upload `cb-vehicles.php` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Place `<?php do_action('plugin_name_hook'); ?>` in your templates
+
+## Development ##
+
+1. Clone the the repository
+2. Run `npm install` and `composer install`
+
+**Update translations**
+
+Run `grunt makepot`
 
 ## Frequently Asked Questions ##
 

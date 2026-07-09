@@ -54,6 +54,21 @@ class Plugin {
 			}
 		},40);
 
+		/**
+		 * We want to ensure that new translations are available directly after update
+		 * so we load the local translation first if its available, otherwise we use the load_plugin_textdomain
+		 * to load from the global WordPress translation file.
+		 */
+		$locale                  = get_locale();
+		$locale_translation_file = CB_VEHICLES_PLUGIN_DIR . 'languages/' . CB_VEHICLES_TRANSLATION_DOMAIN . '_' .  $locale . '.mo';
+
+		if ( file_exists( $locale_translation_file ) ) {
+			load_textdomain( CB_VEHICLES_TRANSLATION_DOMAIN, $locale_translation_file );
+		} else {
+			load_plugin_textdomain( CB_VEHICLES_TRANSLATION_DOMAIN, false, CB_VEHICLES_PLUGIN_DIR . 'languages' );
+		}
+
+		//Register VehicleTypes over rest Route before CB can jump in with their own (priority 5)
 		add_action(
 			'rest_api_init',
 		function () {

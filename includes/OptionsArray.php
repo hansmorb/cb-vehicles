@@ -11,6 +11,7 @@ return array(
 				'fields' => array(
 					array(
 						'name' => esc_html__( 'Show frontend templates', 'cb-vehicles' ),
+						'desc' => esc_html__( 'When enabled, the information you defined for each item will be nicely displayed in a list on the item page.', 'cb-vehicles' ),
 						'id'   => 'frontend_enabled',
 						'type' => 'checkbox',
 					),

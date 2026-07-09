@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'CB_VEHICLES_VERSION', '0.1.0' );
 define( 'CB_VEHICLES_PATH', __DIR__ );
 define( 'CB_VEHICLES_METABOX_PREFIX', '_cbvehicles_' );
-define( 'CB_VEHICLES_TRANSLATION_DOMAIN', 'cb_vehicles' );
+define( 'CB_VEHICLES_TRANSLATION_DOMAIN', 'cb-vehicles' );
 define( 'CB_VEHICLES_PLUGIN_URL', plugins_url( '', __FILE__ ) );
 define( 'CB_VEHICLES_PLUGIN_DIR', wp_normalize_path( plugin_dir_path( __FILE__ ) ) );
 define( 'CB_VEHICLES_PLUGIN_FILE', __FILE__ );

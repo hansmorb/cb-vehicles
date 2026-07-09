@@ -62,7 +62,7 @@ class Item {
 			//GBFS field (optional)
 			[
 				'name'       => esc_html__( 'Max permitted speed (km/h)', 'cb-vehicles' ),
-				'desc'       => esc_html__( 'The maximum speed in kilometers per hour this vehicle is permitted to reach in accordance with local permit and regulations. ', 'cb-vehicles' ),
+				'desc'       => esc_html__( 'The maximum speed in kilometers per hour this vehicle is permitted to reach in accordance with local permit and regulations.', 'cb-vehicles' ),
 				'id'         => CB_VEHICLES_METABOX_PREFIX . 'max_permitted_speed',
 				'type'       => 'text_small',
 				'attributes' => array(
@@ -250,7 +250,7 @@ class Item {
 			//optional
 			[
 				'name'       => esc_html__( 'Owner' , 'cb-vehicles' ),
-				'desc'       => esc_html__ ('Who is the owner of the vehicle? Some owners want their name displayed, do this here. USually company or sponsor.', 'cb-vehicles' ), //TODO: Reword
+				'desc'       => esc_html__ ('Who is the owner of the vehicle? Some owners want their name displayed, do this here. Usually company or sponsor.', 'cb-vehicles' ),
 				'id'         => CB_VEHICLES_METABOX_PREFIX . 'owner',
 				'type'       => 'text'
 			],
@@ -288,7 +288,7 @@ class Item {
 			'electric' => esc_html__('Electric (throttle)', 'cb-vehicles' ),
 			'combustion' => esc_html__('Gasoline Combustion Engine', 'cb-vehicles' ),
 			'combustion_diesel' => esc_html__('Diesel Combustion Engine', 'cb-vehicles' ),
-			'hybrid' => esc_html__('Hybrid (Combustion engine / electric motor', 'cb-vehicles' ),
+			'hybrid' => esc_html__('Hybrid (Combustion engine / electric motor)', 'cb-vehicles' ),
 			'plug_in_hybrid' => esc_html__('Plug-in hybrid', 'cb-vehicles' ),
 			'hydrogel_fuel_cell' => esc_html__('Hydrogel fuel cell', 'cb-vehicles' )
 		);

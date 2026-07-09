@@ -1,0 +1,554 @@
+# Copyright (C) 2026 hansmorb
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: CommonsBooking - Vehicles 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/cb-vehicles\n"
+"POT-Creation-Date: 2026-07-09 15:10:00+00:00\n"
+"PO-Revision-Date: 2026-07-09 17:10+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Bookmarks: \n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: Poedit 3.9\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: includes/OptionsArray.php:5
+msgid "CB Vehicles"
+msgstr "CB Vehicles"
+
+#: includes/OptionsArray.php:9
+msgid "General"
+msgstr "Allgemein"
+
+#: includes/OptionsArray.php:13
+msgid "Show frontend templates"
+msgstr "Zeige Frontend Templates"
+
+#: includes/OptionsArray.php:14
+msgid ""
+"When enabled, the information you defined for each item will be nicely "
+"displayed in a list on the item page."
+msgstr ""
+"Wenn diese Option aktiviert ist, werden die zusätzlichen Metainformationen "
+"für jeden Artikel übersichtlich in einer Liste auf der Artikelseite "
+"angezeigt."
+
+#: includes/OptionsArray.php:21
+msgid "GBFS Default Vehicle Types"
+msgstr "GBFS Standard Fahrzeugtyp"
+
+#: includes/OptionsArray.php:22
+msgid ""
+"When publishing additional vehicle information to the GBFS API, some "
+"information is required, otherwise the data published will be considered "
+"invalid. Therefore, you can set default values here, that will be taken when "
+"the values are not defined at the item level. Items can also be hidden from "
+"the API, when the checkbox is set in the corresponding item."
+msgstr ""
+"Wenn Informationen zu der Art der Fahrzeuge, die in dieser Instanz verliehen "
+"werden, von der GBFS API veröffentlicht werden müssen manche Informationen "
+"vorhanden sein, ansonsten gilt die gesamte Freigabe als ungültig. Aus diesem "
+"Grund können hier Standardwerte gesetzt werden, die herangezogen werden, "
+"wenn die Werte für den Artikel nicht definiert sind. Artikel können auch mit "
+"einem Haken an der entsprechenden Option im Artikel von der API Freigabe "
+"ausgeschlossen werden."
+
+#: includes/OptionsArray.php:26
+msgid "Default form factor"
+msgstr "Standard Fahrzeugtyp"
+
+#: includes/OptionsArray.php:28
+msgid ""
+"The default form factor that is used when none is defined at the item level."
+msgstr ""
+"Der Standard Fahrzeugtyp der verwendet wird, wenn kein Fahrzeugtyp auf "
+"Artikelebene angegeben wurde."
+
+#: includes/OptionsArray.php:35
+msgid "Default propulsion type"
+msgstr "Standard Antriebsart"
+
+#: includes/OptionsArray.php:37
+msgid ""
+"The default propulsion type that is used when none is defined at the item "
+"level."
+msgstr ""
+"Die Antriebsart, die für Fahrzeuge angegeben wird, die keine Antriebsart "
+"definiert haben."
+
+#: includes/OptionsArray.php:44
+msgid "Default max range (meters)"
+msgstr "Reichweite (Meter)"
+
+#: includes/OptionsArray.php:46
+msgid ""
+"When a motor is defined in the propulsion type, a max range also has to be "
+"given."
+msgstr ""
+"Wenn ein Motor als Antriebsart angegeben wird, muss auch eine maximale "
+"Reichweite angegeben werden."
+
+#: src/WordPress/CustomPostType/Item.php:20
+msgid "Form factor"
+msgstr "Fahrzeugtyp"
+
+#: src/WordPress/CustomPostType/Item.php:21
+msgid ""
+"The item's general form factor. When none is defined the defaults from the "
+"settings will be used."
+msgstr ""
+"Der Fahrzeugtyp des Fahrzeugs. Wenn keine angegeben wird, werden die "
+"Standardeinstellungen aus den Einstellungen verwendet."
+
+#: src/WordPress/CustomPostType/Item.php:30
+msgid "Propulsion type"
+msgstr "Antriebsart"
+
+#: src/WordPress/CustomPostType/Item.php:31
+msgid ""
+"The primary propulsion type of the vehicle. When none is defined the "
+"defaults from the settings will be used."
+msgstr ""
+"Die primäre Antriebsart des Fahrzeugs. Wenn keine angegeben wird, werden die "
+"Standardeinstellungen aus den Einstellungen verwendet."
+
+#: src/WordPress/CustomPostType/Item.php:40
+msgid "Range (meters) (required when using a motor)"
+msgstr ""
+"Reichweite (Meter) (Pflichtfeld, wenn Fahrzeug über einen Motor verfügt)"
+
+#: src/WordPress/CustomPostType/Item.php:41
+msgid ""
+"The range the vehicle can travel with a full charge / tank. When none is "
+"defined the defaults from the settings will be used."
+msgstr ""
+"Die Reichweite, die das Fahrzeug mit einer vollen Ladung bzw. einem vollen "
+"Tank zurücklegen kann. Wenn kein Wert angegeben wird, werden die "
+"Standardwerte aus den Einstellungen verwendet."
+
+#: src/WordPress/CustomPostType/Item.php:52
+msgid "Wheel count"
+msgstr "Räder"
+
+#: src/WordPress/CustomPostType/Item.php:53
+msgid "Number of wheels this vehicle has"
+msgstr "Anzahl der Räder, über die dieses Fahrzeug verfügt"
+
+#: src/WordPress/CustomPostType/Item.php:64
+msgid "Max permitted speed (km/h)"
+msgstr "Maximalgeschwindigkeit (km/h)"
+
+#: src/WordPress/CustomPostType/Item.php:65
+msgid ""
+"The maximum speed in kilometers per hour this vehicle is permitted to reach "
+"in accordance with local permit and regulations."
+msgstr ""
+"Die Höchstgeschwindigkeit in Kilometern pro Stunde, die dieses Fahrzeug "
+"gemäß den örtlichen Genehmigungen und Vorschriften erreichen darf."
+
+#: src/WordPress/CustomPostType/Item.php:76
+msgid "Cargo volume capacity (l)"
+msgstr "Ladevolumen (l)"
+
+#: src/WordPress/CustomPostType/Item.php:77
+msgid ""
+"Cargo volume available in the vehicle, expressed in liters. For cars, it "
+"corresponds to the space between the boot floor, including the storage under "
+"the hatch, to the rear shelf in the trunk."
+msgstr ""
+"Ladevolumen für den Artikel in Litern. Bei PKWs entspricht dies dem Raum "
+"zwischen dem Kofferraumboden – einschließlich des Stauraums unter der "
+"Heckklappe – und der hinteren Ablage im Kofferraum."
+
+#: src/WordPress/CustomPostType/Item.php:88
+msgid "Cargo load capacity (kg)"
+msgstr "Zuladung (kg)"
+
+#: src/WordPress/CustomPostType/Item.php:89
+msgid ""
+"The capacity of the vehicle cargo space (excluding passengers), expressed in "
+"kilograms."
+msgstr "The maximale Zuladung des Fahrzeugs (ohne Passagiere) in Kilogramm."
+
+#: src/WordPress/CustomPostType/Item.php:100
+msgid "Empty weight (kg)"
+msgstr "Leergewicht (kg)"
+
+#: src/WordPress/CustomPostType/Item.php:101
+msgid "The weight of the vehicle when it is empty."
+msgstr "Das Leergewicht des Fahrzeugs."
+
+#: src/WordPress/CustomPostType/Item.php:112
+msgid "Length (cm)"
+msgstr "Länge (cm)"
+
+#: src/WordPress/CustomPostType/Item.php:113
+msgid ""
+"The minimum length of the vehicle. For trailers, the length with the trailer "
+"drawbar folded in."
+msgstr ""
+"Die minimale Länge des Fahrzeugs. Für Anhänger ist das die Länge des "
+"Anhängers mit eingedrehter Deichsel."
+
+#: src/WordPress/CustomPostType/Item.php:124
+msgid "Width (cm)"
+msgstr "Breite (cm)"
+
+#: src/WordPress/CustomPostType/Item.php:125
+msgid "The width of the vehicle at its widest point."
+msgstr "Wie weit das Fahrzeug an seinem weitesten Punkt ist."
+
+#: src/WordPress/CustomPostType/Item.php:136
+msgid "Loading area length (cm)"
+msgstr "Ladefläche Länge (cm)"
+
+#: src/WordPress/CustomPostType/Item.php:137
+msgid "The length of just the loading area"
+msgstr "Die Länge der Ladefläche"
+
+#: src/WordPress/CustomPostType/Item.php:148
+msgid "Loading area width (cm)"
+msgstr "Ladefläche Breite (cm)"
+
+#: src/WordPress/CustomPostType/Item.php:149
+msgid "The width of just the loading area"
+msgstr "Die Breite der Ladefläche"
+
+#: src/WordPress/CustomPostType/Item.php:160
+msgid "Adjustable seat post?"
+msgstr "Sitz verstellbar?"
+
+#: src/WordPress/CustomPostType/Item.php:161
+msgid "Is the seat post adjustable?"
+msgstr "Ist die Höhe des Sitzes verstellbar?"
+
+#: src/WordPress/CustomPostType/Item.php:167
+msgid "Handlebar adjustable?"
+msgstr "Lenkerstange verstellbar?"
+
+#: src/WordPress/CustomPostType/Item.php:168
+msgid "Is the handlebar adjustable?"
+msgstr "Ist die Höhe der Lenkerstange verstellbar?"
+
+#: src/WordPress/CustomPostType/Item.php:174
+msgid "Hitches"
+msgstr "Kupplungen"
+
+#: src/WordPress/CustomPostType/Item.php:175
+msgid "The hitches attached to the vehicle."
+msgstr "Die Kupplungen, die an dem Fahrzeug montiert sind."
+
+#: src/WordPress/CustomPostType/Item.php:180
+msgid "Hitch {#}"
+msgstr "Kupplung {#}"
+
+#: src/WordPress/CustomPostType/Item.php:181
+msgid "Add hitch"
+msgstr "Kupplung hinzufügen"
+
+#: src/WordPress/CustomPostType/Item.php:182
+msgid "Remove hitch"
+msgstr "Kupplung entfernen"
+
+#: src/WordPress/CustomPostType/Item.php:186
+msgid "Hitch type"
+msgstr "Kupplungstyp"
+
+#: src/WordPress/CustomPostType/Item.php:187
+msgid ""
+"What kind of trailer hitch is used by the vehicle? This is used to find "
+"compatible trailers for the item."
+msgstr ""
+"Welche Art von Kupplung wird von dem Fahrzeug verwendet? Diese Information "
+"kann genutzt werden, um kompatible Anhänger für diesen Artikel zu finden."
+
+#: src/WordPress/CustomPostType/Item.php:196
+msgid "Hitch maximum towing capacity (kg)"
+msgstr "Kupplung maximale Anhängelast (kg)"
+
+#: src/WordPress/CustomPostType/Item.php:197
+msgid "The maximum towing capacity that the hitch is rated for in kilograms."
+msgstr "Die maximale Anhängelast der Anhängerkupplung in Kilogramm."
+
+#: src/WordPress/CustomPostType/Item.php:210
+msgid "Make"
+msgstr "Marke"
+
+#: src/WordPress/CustomPostType/Item.php:211
+msgid "The name of the vehicle manufacturer"
+msgstr "Der Name des Herstellers des Artikels"
+
+#: src/WordPress/CustomPostType/Item.php:217
+msgid "Model"
+msgstr "Modell"
+
+#: src/WordPress/CustomPostType/Item.php:218
+msgid "The name of the vehicle model"
+msgstr "Der Name des Modells des Fahrzeugs"
+
+#: src/WordPress/CustomPostType/Item.php:224
+msgid "Gallery"
+msgstr "Galerie"
+
+#: src/WordPress/CustomPostType/Item.php:225
+msgid "Additional pictures of the vehicle. Will be displayed in a gallery."
+msgstr "Zusätzliche Bilder des Fahrzeugs. Werden in einer Galerie angezeigt."
+
+#: src/WordPress/CustomPostType/Item.php:252
+msgid "Owner"
+msgstr "Eigentümer / Sponsor"
+
+#: src/WordPress/CustomPostType/Item.php:253
+msgid ""
+"Who is the owner of the vehicle? Some owners want their name displayed, do "
+"this here. Usually company or sponsor."
+msgstr ""
+"Wer ist der Eigentümer des Fahrzeugs? Manche Eigentümer wollen gerne ihren "
+"Namen auf der Artikelseite haben, das geht hier. Normalerweise eine Firma, "
+"der Sponsor oder die Quelle der Fördermittel aus denen der Artikel "
+"finanziert wurde."
+
+#: src/WordPress/CustomPostType/Item.php:259
+msgid "Owner logo"
+msgstr "Logo des Eigentümers"
+
+#: src/WordPress/CustomPostType/Item.php:260
+msgid ""
+"An image representative of the lessor. This is usually a company logo. It "
+"will be displayed right alongside the name of the owner."
+msgstr ""
+"Ein Bild, das den Bereitsteller des Fahrzeugs repräsentiert. In der Regel "
+"handelt es sich dabei um ein Firmenlogo. Es wird direkt neben dem Namen des "
+"Eigentümers angezeigt."
+
+#: src/WordPress/CustomPostType/Item.php:286
+msgid "Human powered"
+msgstr "Muskelgetrieben"
+
+#: src/WordPress/CustomPostType/Item.php:287
+msgid "Electric assist"
+msgstr "Elektrische Unterstützung"
+
+#: src/WordPress/CustomPostType/Item.php:288
+msgid "Electric (throttle)"
+msgstr "Elektrisch (mit Gasgriff)"
+
+#: src/WordPress/CustomPostType/Item.php:289
+msgid "Gasoline Combustion Engine"
+msgstr "Benzin Verbrennermotor"
+
+#: src/WordPress/CustomPostType/Item.php:290
+msgid "Diesel Combustion Engine"
+msgstr "Diesel Verbrennermotor"
+
+#: src/WordPress/CustomPostType/Item.php:291
+msgid "Hybrid (Combustion engine / electric motor)"
+msgstr "Hybrid (Verbrennungsmotor / Elektrischer Motor)"
+
+#: src/WordPress/CustomPostType/Item.php:292
+msgid "Plug-in hybrid"
+msgstr "Plug-in Hybrid"
+
+#: src/WordPress/CustomPostType/Item.php:293
+msgid "Hydrogel fuel cell"
+msgstr "Brennstoffzelle"
+
+#: src/WordPress/CustomPostType/Item.php:303
+msgid "Cargo bike"
+msgstr "Lastenrad"
+
+#: src/WordPress/CustomPostType/Item.php:304
+msgid "Bicycle"
+msgstr "Fahrrad"
+
+#: src/WordPress/CustomPostType/Item.php:305
+msgid "Bicycle trailer"
+msgstr "Fahrradanhänger"
+
+#: src/WordPress/CustomPostType/Item.php:306
+msgid "Adaptive bike"
+msgstr "Inklusionsräder"
+
+#: src/WordPress/CustomPostType/Item.php:307
+msgid "Moped"
+msgstr "Moped"
+
+#: src/WordPress/CustomPostType/Item.php:308
+msgid "Scooter with rider standing up"
+msgstr "Roller mit stehendem Fahrer"
+
+#: src/WordPress/CustomPostType/Item.php:309
+msgid "Scooter with rider seated"
+msgstr "Roller mit Fahrersitz"
+
+#: src/WordPress/CustomPostType/Item.php:310
+msgid "Car"
+msgstr "Auto"
+
+#: src/WordPress/CustomPostType/Item.php:311
+msgid "Other"
+msgstr "Andere"
+
+#: src/WordPress/CustomPostType/Item.php:326
+msgid "Croozer® (pre 2016)"
+msgstr "Croozer® (vor 2016)"
+
+#. translators: %s: owner name
+#: templates/item.php:43
+msgid "Provided by %s"
+msgstr "Bereitgestellt von %s"
+
+#. translators: %s: speed in km/h
+#: templates/item.php:114
+msgid "Electric assist up to %s km/h"
+msgstr "Elektrische Unterstützung bis zu %s km/h"
+
+#: templates/item.php:118
+msgid "No electric assist"
+msgstr "Keine elektrische Unterstützung"
+
+#. translators: %s: speed in km/h
+#: templates/item.php:124
+msgid "(max. %s km/h)"
+msgstr "(max. %s km/h)"
+
+#. translators: %s: weight in kg
+#: templates/item.php:137
+msgid "Load capacity: %s kg"
+msgstr "Zuladung: %s kg"
+
+#: templates/item.php:147
+msgid "Technical details"
+msgstr "Technische Infos"
+
+#: templates/item.php:155
+msgid "Vehicle type:"
+msgstr "Fahrzeugtyp:"
+
+#: templates/item.php:163
+msgid "Propulsion type:"
+msgstr "Antriebsart:"
+
+#: templates/item.php:171
+msgid "Range:"
+msgstr "Reichweite:"
+
+#. translators: %s: range in meters
+#: templates/item.php:174
+msgid "%s m"
+msgstr "%s m"
+
+#: templates/item.php:183
+msgid "Wheel count:"
+msgstr "Anzahl Räder:"
+
+#: templates/item.php:191
+msgid "Empty weight:"
+msgstr "Leergewicht:"
+
+#. translators: %s: weight in kg
+#: templates/item.php:194 templates/item.php:218
+msgid "%s kg"
+msgstr "%s kg"
+
+#: templates/item.php:203
+msgid "Cargo volume:"
+msgstr "Ladevolumen:"
+
+#. translators: %s: volume in liters
+#: templates/item.php:206
+msgid "%s l"
+msgstr "%s l"
+
+#: templates/item.php:215
+msgid "Cargo load capacity:"
+msgstr "Zuladung:"
+
+#: templates/item.php:227
+msgid "Width:"
+msgstr "Breite:"
+
+#. translators: %s: width in cm
+#. translators: %s: length in cm
+#: templates/item.php:230 templates/item.php:242
+msgid "%s cm"
+msgstr "%s cm"
+
+#: templates/item.php:239
+msgid "Length:"
+msgstr "Länge:"
+
+#: templates/item.php:251
+msgid "Loading area:"
+msgstr "Ladefläche:"
+
+#. translators: 1: length in cm, 2: width in cm
+#: templates/item.php:255
+msgid "%1$s cm × %2$s cm"
+msgstr "%1$s cm × %2$s cm"
+
+#. translators: %s: length in cm
+#: templates/item.php:262
+msgid "%s cm (length)"
+msgstr "%s cm (Länge)"
+
+#. translators: %s: width in cm
+#: templates/item.php:268
+msgid "%s cm (width)"
+msgstr "%s cm (Breite9"
+
+#: templates/item.php:278
+msgid "Seat post adjustable"
+msgstr "Sitzhöhe verstellbar"
+
+#: templates/item.php:285
+msgid "Handlebar adjustable"
+msgstr "Lenkerstange verstellbar"
+
+#: templates/item.php:292
+msgid "Hitches:"
+msgstr "Kupplungen:"
+
+#: templates/item.php:310
+msgid "Make / Model:"
+msgstr "Marke / Modell:"
+
+#: templates/item.php:313
+msgid "Make:"
+msgstr "Marke:"
+
+#: templates/item.php:316
+msgid "Model:"
+msgstr "Modell:"
+
+#. Plugin Name of the plugin/theme
+msgid "CommonsBooking - Vehicles"
+msgstr "CommonsBooking - Vehicles"
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/hansmorb/cb-vehicles"
+msgstr "https://github.com/hansmorb/cb-vehicles"
+
+#. Description of the plugin/theme
+msgid "An extension for CommonsBooking (>=2.11) to facilitate vehicle rental."
+msgstr ""
+"Eine Erweiterung für CommonsBooking (>=2.11) um den Verleih von Fahrzeugen "
+"zu vereinfachen."
+
+#. Author of the plugin/theme
+msgid "hansmorb"
+msgstr "hansmorb"
+
+#. Author URI of the plugin/theme
+msgid "https://profiles.wordpress.org/hansmorb/"
+msgstr "https://profiles.wordpress.org/hansmorb/"
