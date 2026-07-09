@@ -99,31 +99,39 @@ class Plugin {
 					CB_VEHICLES_TRANSLATION_DOMAIN . '_accordion_js',
 					CB_VEHICLES_PLUGIN_URL . '/assets/js/accordion.js',
 					[],
-					null,
+					CB_VEHICLES_VERSION,
 					true
 				);
 				//Accordion styles
 				wp_enqueue_style(
 					CB_VEHICLES_TRANSLATION_DOMAIN . '_accordion_css',
-					CB_VEHICLES_PLUGIN_URL . '/assets/css/accordion.css'
+					CB_VEHICLES_PLUGIN_URL . '/assets/css/accordion.css',
+					[],
+					CB_VEHICLES_VERSION
 				);
 
 				//Gallery styles
 				wp_enqueue_style(
 					CB_VEHICLES_TRANSLATION_DOMAIN . '_gallery_css',
-					CB_VEHICLES_PLUGIN_URL . '/assets/css/gallery.css'
+					CB_VEHICLES_PLUGIN_URL . '/assets/css/gallery.css',
+					[],
+					CB_VEHICLES_VERSION
 				);
 
 				//Gallery scripts
 				wp_enqueue_script(
 					CB_VEHICLES_TRANSLATION_DOMAIN . '_gallery_js',
 					CB_VEHICLES_PLUGIN_URL . '/assets/js/gallery.js',
+					[],
+					CB_VEHICLES_VERSION
 				);
 
 				//The icon font
 				wp_enqueue_style(
 					CB_VEHICLES_TRANSLATION_DOMAIN . '_fontello',
-					CB_VEHICLES_PLUGIN_URL . '/assets/icons/css/fontello.css'
+					CB_VEHICLES_PLUGIN_URL . '/assets/icons/css/fontello.css',
+					[],
+					CB_VEHICLES_VERSION
 				);
 
 				include CB_VEHICLES_PATH . '/templates/item.php';
