@@ -99,7 +99,9 @@ if ( ! empty( $gallery ) ) {
         </div>
     <?php endif; ?>
 <?php endif; ?>
-
+<?php
+if ($form_factor || $propulsion_type || $max_range_meters || $wheel_count || $empty_weight || $cargo_volume || $cargo_load || $width || $length || $loading_area_length || $loading_area_width || $seat_post_adj || $handlebar_adj || $hitches || $make || $model):
+?>
 <div class="cb-vehicles-top-infos">
     <ul style="list-style-type:none;">
 
@@ -324,3 +326,4 @@ if ( ! empty( $gallery ) ) {
 
     </ul>
 </div>
+<?php endif; ?>
