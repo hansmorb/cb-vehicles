@@ -79,21 +79,38 @@ class Plugin {
 
 		if (Settings::getOption('commonsbooking_options_cb_vehicles', 'frontend_enabled' ) == "on") {
 			add_action('commonsbooking_before_item-single', function () {
+				//Accordion scripts
 				wp_enqueue_script(
-					CB_VEHICLES_TRANSLATION_DOMAIN . '_js',
+					CB_VEHICLES_TRANSLATION_DOMAIN . '_accordion_js',
 					CB_VEHICLES_PLUGIN_URL . '/assets/js/accordion.js',
 					[],
 					null,
 					true
 				);
+				//Accordion styles
 				wp_enqueue_style(
-					CB_VEHICLES_TRANSLATION_DOMAIN . '_css',
+					CB_VEHICLES_TRANSLATION_DOMAIN . '_accordion_css',
 					CB_VEHICLES_PLUGIN_URL . '/assets/css/accordion.css'
 				);
+
+				//Gallery styles
+				wp_enqueue_style(
+					CB_VEHICLES_TRANSLATION_DOMAIN . '_gallery_css',
+					CB_VEHICLES_PLUGIN_URL . '/assets/css/gallery.css'
+				);
+
+				//Gallery scripts
+				wp_enqueue_script(
+					CB_VEHICLES_TRANSLATION_DOMAIN . '_gallery_js',
+					CB_VEHICLES_PLUGIN_URL . '/assets/js/gallery.js',
+				);
+
+				//The icon font
 				wp_enqueue_style(
 					CB_VEHICLES_TRANSLATION_DOMAIN . '_fontello',
 					CB_VEHICLES_PLUGIN_URL . '/assets/icons/css/fontello.css'
 				);
+
 				include CB_VEHICLES_PATH . '/templates/item.php';
 			});
 		}

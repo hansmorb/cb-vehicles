@@ -52,14 +52,52 @@ $hitch_labels       = \CBVehicles\WordPress\CustomPostType\Item::getHitches();
          style="max-height:50px;">
 <?php endif; ?>
 
-<?php if ( ! empty( $gallery ) ) : ?>
-    <div class="cb-vehicles-gallery">
-        <?php foreach ( $gallery as $attachment_id => $attachment_url ) : ?>
-            <img src="<?php echo esc_url( $attachment_url ); ?>"
-                 alt="<?php echo esc_attr( get_the_title( $attachment_id ) ); ?>"
-                 style="max-width:200px; margin:4px;">
+<?php
+$gallery_slides = [];
+
+$thumbnail_id  = get_post_thumbnail_id( $post->ID );
+$thumbnail_url = get_the_post_thumbnail_url( $post->ID );
+
+if ( $thumbnail_url ) {
+    $gallery_slides[] = [
+        'url' => $thumbnail_url,
+        'alt' => get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true ),
+    ];
+}
+
+if ( ! empty( $gallery ) ) {
+    foreach ( $gallery as $attachment_id => $attachment_url ) {
+        $gallery_slides[] = [
+            'url' => $attachment_url,
+            'alt' => get_post_meta( $attachment_id, '_wp_attachment_image_alt', true ) ?: get_the_title( $attachment_id ),
+        ];
+    }
+}
+?>
+
+<?php if ( ! empty( $gallery_slides ) ) : ?>
+    <div class="slideshow-container">
+        <?php foreach ( $gallery_slides as $slide ) : ?>
+            <div class="itemgallery fade">
+                <img src="<?php echo esc_url( $slide['url'] ); ?>"
+                     alt="<?php echo esc_attr( $slide['alt'] ); ?>"
+                     style="width:100%">
+            </div>
         <?php endforeach; ?>
+
+        <?php if ( count( $gallery_slides ) > 1 ) : ?>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <?php endif; ?>
     </div>
+
+    <?php if ( count( $gallery_slides ) > 1 ) : ?>
+        <div style="text-align:center">
+            <?php for ( $i = 1; $i <= count( $gallery_slides ); $i++ ) : ?>
+                <span class="dot" onclick="currentSlide(<?php echo esc_attr( $i ); ?>)"></span>
+            <?php endfor; ?>
+        </div>
+    <?php endif; ?>
 <?php endif; ?>
 
 <div class="cb-vehicles-top-infos">
