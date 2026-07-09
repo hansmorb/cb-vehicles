@@ -1,15 +1,14 @@
 === CommonsBooking - Vehicles ===
 Contributors: hansmorb
-Donate link: https://example.com/
-Tags: comments, spam
-Requires at least: 4.5
-Tested up to: 6.3.2
-Requires PHP: 7.4
+Tags: booking, bikes, cargobikes, vehicles, calendar
+Requires at least: 5.9
+Tested up to: 7.9
+Requires PHP: 8.1
 Stable tag: 0.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-An extension for CommonsBooking (>=2.9.2) to facilitate vehicle rental.
+An extension for CommonsBooking (>=2.11) to facilitate cargobike, bicycle, bicycle trailer and other vehicle rentals.
 
 == Description ==
 
@@ -22,89 +21,26 @@ You can set the type of vehicle and add technical specifications. From these fie
 Includes support for trailer hitches, so you can find a suitable bike for your trailer and vice versa.
 This plugin only works with the latest version of CommonsBooking (>=2.11) and is not compatible with older versions.
 
-
-A few notes about the sections above:
-
-*   "Contributors" is a comma separated list of wp.org/wp-plugins.org usernames
-*   "Tags" is a comma separated list of tags that apply to the plugin
-*   "Requires at least" is the lowest version that the plugin will work on
-*   "Tested up to" is the highest version that you've *successfully used to test the plugin*. Note that it might work on
-higher versions... this is just the highest one you've verified.
-*   Stable tag should indicate the Subversion "tag" of the latest stable version, or "trunk," if you use `/trunk/` for
-stable.
-
 == Installation ==
 
-This section describes how to install the plugin and get it working.
+Install this plugin from the WordPress plugin directory as usual.
+In case you should only have a zip file of the plugin, proceed as follows:
 
-e.g.
+### Uploading zip WordPress Dashboard
 
-1. Upload `plugin-name.php` to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Place `<?php do_action('plugin_name_hook'); ?>` in your templates
-
-== Frequently Asked Questions ==
-
-= A question that someone might have =
-
-An answer to that question.
-
-= What about foo bar? =
-
-Answer to foo bar dilemma.
+1. Navigate to the 'Add New' in the plugins dashboard
+2. Navigate to the 'Upload' area
+3. Select `cb-vehicles.zip` from your computer
+4. Click 'Install Now'
+5. Activate the plugin in the Plugin dashboard
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png`
-(or jpg, jpeg, gif).
-2. This is the second screen shot
+1. Example how the item information is displayed in the frontend (the technical information box is expandable)
+
+2. This is how that same information is configured using the WP backend.
 
 == Changelog ==
 
-= 1.0 =
-* A change since the previous version.
-* Another change.
-
-= 0.5 =
-* List versions from most recent at top to oldest at bottom.
-
-== Upgrade Notice ==
-
-= 1.0 =
-Upgrade notices describe the reason a user should upgrade.  No more than 300 characters.
-
-= 0.5 =
-This version fixes a security related bug.  Upgrade immediately.
-
-== Arbitrary section ==
-
-You may provide arbitrary sections, in the same format as the ones above.  This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation."  Arbitrary sections will be shown below the built-in sections outlined above.
-
-== A brief Markdown Example ==
-
-Ordered list:
-
-1. Some feature
-1. Another feature
-1. Something else about the plugin
-
-Unordered list:
-
-* something
-* something else
-* third thing
-
-Here's a link to [WordPress](https://wordpress.org/ "Your favorite software") and one to [Markdown's Syntax Documentation][markdown syntax].
-Titles are optional, naturally.
-
-[markdown syntax]: https://daringfireball.net/projects/markdown/syntax
-            "Markdown is what the parser uses to process much of the readme file"
-
-Markdown uses email style notation for blockquotes and I've been told:
-> Asterisks for *emphasis*. Double it up  for **strong**.
-
-`<?php code(); // goes in backticks ?>`
+= 0.1.0 =
+Initial release: Support generating frontend templates and GBFS vehicle_types endpoints from metadata

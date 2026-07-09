@@ -7,14 +7,19 @@
 .eslintrc
 .git
 .gitignore
+.agents
+.codex
 .github
 .gitlab-ci.yml
 .travis.yml
+.idea
+.wp-env.json
 .DS_Store
 Thumbs.db
 behat.yml
 bitbucket-pipelines.yml
 bin
+build
 .circleci/config.yml
 composer.json
 composer.lock
@@ -35,7 +40,6 @@ webpack.config.js
 wp-cli.local.yml
 yarn.lock
 tests
-vendor
 node_modules
 *.sql
 *.tar.gz
