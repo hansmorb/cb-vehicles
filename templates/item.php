@@ -272,22 +272,17 @@ if ($form_factor || $propulsion_type || $max_range_meters || $wheel_count || $em
             </li>
         <?php endif; ?>
 
-        <?php if ( in_array( $form_factor, [ 'bicycle', 'cargo_bicycle' ], true ) ) : ?>
+        <?php if ( $seat_post_adj ) : ?>
             <li>
                 <i class="icon-ruler"></i>
-                <?php if ( $seat_post_adj ) : ?>
-                    <?php esc_html_e( 'Seat post adjustable', 'cb-vehicles' ); ?>
-                <?php else : ?>
-                    <?php esc_html_e( 'Seat post not adjustable', 'cb-vehicles' ); ?>
-                <?php endif; ?>
+                <?php esc_html_e( 'Seat post adjustable', 'cb-vehicles' ); ?>
             </li>
+        <?php endif; ?>
+
+        <?php if ( $handlebar_adj ) : ?>
             <li>
                 <i class="icon-ruler"></i>
-                <?php if ( $handlebar_adj ) : ?>
-                    <?php esc_html_e( 'Handlebar adjustable', 'cb-vehicles' ); ?>
-                <?php else : ?>
-                    <?php esc_html_e( 'Handlebar not adjustable', 'cb-vehicles' ); ?>
-                <?php endif; ?>
+                <?php esc_html_e( 'Handlebar adjustable', 'cb-vehicles' ); ?>
             </li>
         <?php endif; ?>
 
