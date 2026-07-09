@@ -41,7 +41,7 @@ class CBVehicles {
 			false,
 			basename( CB_VEHICLES_PATH ) . '/languages'
 		);
-		$plugin = Plugin::init();
+		Plugin::init();
 	}
 
 	public static function activation_hooks() {
