@@ -36,11 +36,6 @@ if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 class CBVehicles {
 
 	public static function plugins_loaded() {
-		load_plugin_textdomain(
-			'cb-vehicles',
-			false,
-			basename( CB_VEHICLES_PATH ) . '/languages'
-		);
 		Plugin::init();
 	}
 

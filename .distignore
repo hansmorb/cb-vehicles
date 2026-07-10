@@ -21,8 +21,6 @@ bitbucket-pipelines.yml
 bin
 build
 .circleci/config.yml
-composer.json
-composer.lock
 dependencies.yml
 Gruntfile.js
 package.json

@@ -12,11 +12,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypress:open": "cypress open --config-file tests/cypress/config.js --e2e --browser firefox",
     "cypress:run": "cypress run --config-file tests/cypress/config.js",
-    "env": "wp-env",
-    "env:debug": "wp-env start --xdebug",
-    "env:start": "wp-env start",
-    "env:stop": "wp-env stop",
-    "env:destroy": "wp-env destroy",
+    "env": "PATH=./tests/bin:$PATH wp-env",
+    "env:debug": "npm run env -- start --xdebug",
+    "env:start": "npm run env -- start",
+    "env:stop": "npm run env -- stop",
+    "env:destroy": "npm run env -- destroy",
     "postenv:start": "./tests/bin/initialize.sh"
   },
   "repository": {
