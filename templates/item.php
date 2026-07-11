@@ -43,13 +43,13 @@ $hitch_labels       = \CBVehicles\WordPress\CustomPostType\Item::getHitches();
             esc_html__( 'Provided by %s', 'cb-vehicles' ),
             esc_html( $owner )
         ); ?>
-    </i></p>
-<?php endif; ?>
-
-<?php if ( $owner_image ) : ?>
+    </i>
+    <?php if ( $owner_image ) : ?>
     <img src="<?php echo esc_url( $owner_image ); ?>"
          alt="<?php echo esc_attr( $owner ); ?>"
          style="max-height:50px;">
+    <?php endif; ?>
+</p>
 <?php endif; ?>
 
 <?php
