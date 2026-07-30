@@ -137,6 +137,9 @@ class Plugin {
 
 				include CB_VEHICLES_PATH . '/templates/item.php';
 			});
+
+			if (Settings::getOption('commonsbooking_options_cb_vehicles', 'show_compatible_items' ) == "on") {
+			}
 		}
 	}
 
