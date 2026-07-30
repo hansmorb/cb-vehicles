@@ -14,6 +14,7 @@ use CBVehicles\API\GBFS\VehicleTypes;
 use CBVehicles\WordPress\CustomPostType\Item;
 use CommonsBooking\Settings\Settings;
 use CommonsBooking\Wordpress\Options\OptionsTab;
+use CommonsBooking\Wordpress\Options\AdminOptions;
 use function PHPUnit\Framework\stringContains;
 
 /**
@@ -159,6 +160,7 @@ class Plugin {
 	 * @return void
 	 */
 	public static function activate() {
+		AdminOptions::setOptionsDefaultValues();
 	}
 
 	/**
