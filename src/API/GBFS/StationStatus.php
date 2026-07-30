@@ -17,7 +17,7 @@ class StationStatus
 		foreach ( $data->data->stations as &$station ) {
 			$items = 			array_filter(
 				Item::getByLocation( $station->station_id, true ),
-				fn( $item ) => $item->isCurrentlyFreeAtLocation( $station->station_id ) && ! $item->getMeta( COMMONSBOOKING_METABOX_PREFIX . 'api_exclude' ) == 'on'
+				fn( $item ) => $item->isCurrentlyFreeAtLocation( $station->station_id, true ) && ! $item->getMeta( COMMONSBOOKING_METABOX_PREFIX . 'api_exclude' ) == 'on'
 			);
 			//there are no vehicle_types with multiple assignments, every item has its own vehicle_type with the same id as the item
 			$vehicleTypes = array_map(fn($item) => (object) [
