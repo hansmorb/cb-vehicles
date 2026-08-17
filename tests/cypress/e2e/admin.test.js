@@ -1,9 +1,11 @@
 const itemTitle = `cb-vehicles-cypress-item-${Date.now()}`;
+const wpCli = (command) =>
+  cy.exec(`npm --silent run env -- run cli wp ${command}`);
 
 describe("CB Vehicles admin integration", () => {
   before(() => {
     cy.login();
-    cy.wpCli("plugin activate commonsbooking cb-vehicles");
+    wpCli("plugin activate commonsbooking cb-vehicles");
   });
 
   beforeEach(() => {
@@ -30,14 +32,14 @@ describe("CB Vehicles admin integration", () => {
     cy.get("#_cbvehicles_wheel_count").should("exist");
     cy.get("#_cbvehicles_make").should("exist");
 
-    cy.wpCli(
+    wpCli(
       `post create --post_type=cb_item --post_title=${itemTitle} --post_status=publish --porcelain`
     ).then((result) => {
       const postId = result.stdout.trim();
 
       expect(postId).to.match(/^\d+$/);
 
-      cy.wpCli(`post get ${postId} --field=post_title`).then((postResult) => {
+      wpCli(`post get ${postId} --field=post_title`).then((postResult) => {
         expect(postResult.stdout.trim()).to.equal(itemTitle);
       });
 

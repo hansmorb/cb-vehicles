@@ -1,13 +1,13 @@
 {
+  "phpVersion": "8.1",
+  "core": "WordPress/WordPress#6.9",
   "plugins": [
+    "./build/cb-vehicles",
     "https://downloads.wordpress.org/plugin/commonsbooking.zip"
   ],
-  "env": {
-    "tests": {
-      "mappings": {
-        "wp-content/plugins/cb-vehicles": ".",
-        "wp-cli.yml": "./tests/bin/wp-cli.yml"
-      }
-    }
-  }
+  "mappings": {
+    "wp-content/plugins/cb-vehicles": "./build/cb-vehicles"
+  },
+  "port": 1001,
+  "testsEnvironment": false
 }
