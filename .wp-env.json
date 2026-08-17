@@ -2,8 +2,8 @@
   "phpVersion": "8.1",
   "core": "WordPress/WordPress#6.9",
   "plugins": [
-    "./build/cb-vehicles",
-    "https://downloads.wordpress.org/plugin/commonsbooking.zip"
+    "https://downloads.wordpress.org/plugin/commonsbooking.zip",
+    "./build/cb-vehicles"
   ],
   "mappings": {
     "wp-content/plugins/cb-vehicles": "./build/cb-vehicles"
