@@ -8,7 +8,7 @@
  * Text Domain:     cb-vehicles
  * Domain Path:     /languages
  * Requires Plugins: commonsbooking
- * Version:         0.1.0
+ * Version:         0.1.2
  * License:             GPL v2 or later
  * License URI:         https://www.gnu.org/licenses/gpl-2.0.html
  *
@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die;
 }
 
-define( 'CB_VEHICLES_VERSION', '0.1.0' );
+define( 'CB_VEHICLES_VERSION', '0.1.2' );
 define( 'CB_VEHICLES_PATH', __DIR__ );
 define( 'CB_VEHICLES_METABOX_PREFIX', '_cbvehicles_' );
 define( 'CB_VEHICLES_TRANSLATION_DOMAIN', 'cb-vehicles' );

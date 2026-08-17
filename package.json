@@ -1,6 +1,6 @@
 {
   "name": "cb-vehicles",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": " An extension for CommonsBooking (>=2.11) to facilitate cargobike, bicycle and bicycle trailer rentals ",
   "main": "Gruntfile.js",
   "scripts": {
@@ -12,12 +12,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypress:open": "cypress open --config-file tests/cypress/config.js --e2e --browser firefox",
     "cypress:run": "cypress run --config-file tests/cypress/config.js",
-    "env": "PATH=./tests/bin:$PATH wp-env",
-    "env:debug": "npm run env -- start --xdebug",
+    "env": "wp-env",
     "env:start": "npm run env -- start",
-    "env:stop": "npm run env -- stop",
-    "env:destroy": "npm run env -- destroy",
-    "postenv:start": "./tests/bin/initialize.sh"
+    "env:stop": "npm run env -- stop"
   },
   "repository": {
     "type": "git",
@@ -30,10 +27,10 @@
   },
   "homepage": "https://github.com/hansmorb/cb-vehicles#readme",
   "devDependencies": {
-    "@10up/cypress-wp-utils": "^0.2.0",
-    "@wordpress/env": "^8.9.0",
-    "cypress": "^13.3.1",
-    "grunt": "~1.6.1",
-    "grunt-wp-i18n": "~1.0.3"
+    "@10up/cypress-wp-utils": "^0.6.0",
+    "@wordpress/env": "^11.13.0",
+    "cypress": "^15.20.1",
+    "grunt": "~1.6.3",
+    "grunt-wp-i18n": "~1.0.4"
   }
 }

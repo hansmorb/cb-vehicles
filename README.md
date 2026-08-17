@@ -4,7 +4,7 @@
 **Requires at least:** 5.9
 **Tested up to:** 7.0
 **Requires PHP:** 8.1
-**Stable tag:** 0.1.0
+**Stable tag:** 0.1.2
 **License:** GPLv2 or later
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,6 +47,13 @@ Run `grunt makepot`
 
 
 ## Changelog ##
+
+### 0.1.2 ###
+fix: gbfs fix vehicle type disappearing from station_status feed when not available at station
+
+### 0.1.1 ###
+fix: gbfs startday offset was not ignored for StationStatus route
+fix: default options not set upon activation
 
 ### 0.1.0 ###
 Initial release: Support generating frontend templates and GBFS vehicle_types endpoints from metadata
