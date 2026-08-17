@@ -2,6 +2,10 @@ name: Deploy to WordPress.org Repository
 on:
   release:
     types: [released]
+
+permissions:
+  contents: write
+
 jobs:
   deploy_to_wp_repository:
 
