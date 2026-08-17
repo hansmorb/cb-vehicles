@@ -4,7 +4,7 @@ Tags: booking, bikes, cargobikes, vehicles, calendar
 Requires at least: 5.9
 Tested up to: 7.0
 Requires PHP: 8.1
-Stable tag: 0.1.1
+Stable tag: 0.1.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,6 +41,9 @@ In case you should only have a zip file of the plugin, proceed as follows:
 2. This is how that same information is configured using the WP backend.
 
 == Changelog ==
+
+= 0.1.2 =
+fix: gbfs fix vehicle type disappearing from station_status feed when not available at station
 
 = 0.1.1 =
 fix: gbfs startday offset was not ignored for StationStatus route

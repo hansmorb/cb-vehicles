@@ -1,6 +1,6 @@
 {
   "name": "cb-vehicles",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": " An extension for CommonsBooking (>=2.11) to facilitate cargobike, bicycle and bicycle trailer rentals ",
   "main": "Gruntfile.js",
   "scripts": {
