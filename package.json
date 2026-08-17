@@ -14,7 +14,7 @@
     "cypress:run": "cypress run --config-file tests/cypress/config.js",
     "env": "PATH=./tests/bin:$PATH wp-env",
     "env:debug": "npm run env -- start --xdebug",
-    "env:start": "npm run env -- start",
+    "env:start": "./tests/bin/env-start.sh",
     "env:stop": "npm run env -- stop",
     "env:destroy": "npm run env -- destroy",
     "postenv:start": "./tests/bin/initialize.sh"
