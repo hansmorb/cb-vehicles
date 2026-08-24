@@ -29,7 +29,7 @@
   "devDependencies": {
     "@10up/cypress-wp-utils": "^0.6.0",
     "@wordpress/env": "^11.13.0",
-    "cypress": "^15.20.1",
+    "cypress": "^15.21.0",
     "grunt": "~1.6.3",
     "grunt-wp-i18n": "~1.0.4"
   }
