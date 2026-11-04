@@ -16,6 +16,12 @@ return array(
 						'id'   => 'frontend_enabled',
 						'type' => 'checkbox',
 					),
+					array(
+						'name' => esc_html__( 'Show compatible trailers on item / trailer page', 'cb-vehicles' ),
+						'desc' => esc_html__( 'When available, the user will be shown trailers / bicycles compatible to the item they have selected. For this to work, you must define the same hitch in both items.', 'cb-vehicles'),
+						'id'   => 'show_compatible_items',
+						'type' => 'checkbox'
+					)
 				),
 			),
 			'gbfs_defaults' => array(
