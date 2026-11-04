@@ -1,3 +1,4 @@
+const { execSync } = require('node:child_process');
 const { defineConfig } = require('cypress');
 
 module.exports = defineConfig({
@@ -10,6 +11,18 @@ module.exports = defineConfig({
   e2e: {
     baseUrl: 'http://localhost:1001/',
     specPattern: 'tests/cypress/e2e/**/*.test.{js,jsx,ts,tsx}',
-    supportFile: 'tests/cypress/support/e2e.js'
+    supportFile: 'tests/cypress/support/e2e.js',
+    setupNodeEvents(on) {
+      on('task', {
+        wpCli(command) {
+          return {
+            stdout: execSync(
+              `npm --silent run env -- run cli wp ${command}`,
+              { encoding: 'utf8' }
+            ),
+          };
+        },
+      });
+    },
   },
 });
