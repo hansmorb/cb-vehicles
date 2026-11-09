@@ -1,6 +1,6 @@
 const itemTitle = `cb-vehicles-cypress-item-${Date.now()}`;
 const wpCli = (command) =>
-  cy.exec(`npm --silent run env -- run cli wp ${command}`);
+  cy.task("wpCli", command);
 
 describe("CB Vehicles admin integration", () => {
   before(() => {
