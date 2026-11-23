@@ -12,7 +12,7 @@ class VehicleTypes extends \CommonsBooking\API\GBFS\BaseRoute
 
 	public function __construct() {
 		$this->schemaUrl = COMMONSBOOKING_PLUGIN_DIR . 'includes/gbfs-json-schema/vehicle_types.json';
-		$this->rest_base = 'vehicle_types-json';
+		$this->rest_base = 'vehicle_types.json';
 	}
 
 
