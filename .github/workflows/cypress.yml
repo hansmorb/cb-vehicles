@@ -25,3 +25,29 @@ jobs:
       run: npm run env:start
     - name: Run Cypress
       run: npm run cypress:run
+    # The GBFS Cypress specs leave the API enabled and the fixture WXR imported.
+    - name: Checkout GBFS validator
+      uses: actions/checkout@v7
+      with:
+        repository: MobilityData/gbfs-validator
+        path: gbfs-validator
+        submodules: recursive
+    - name: Cache GBFS validator dependencies
+      uses: actions/cache@v6
+      with:
+        path: gbfs-validator/node_modules
+        key: ${{ runner.os }}-gbfs-validator-${{ hashFiles('gbfs-validator/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-gbfs-validator-
+    - name: Install GBFS validator dependencies
+      working-directory: gbfs-validator
+      run: yarn
+    - name: Run GBFS validator
+      working-directory: gbfs-validator
+      run: |
+        NODE_TLS_REJECT_UNAUTHORIZED=0 node ./gbfs-validator/cli.js \
+          -u "http://localhost:1001/index.php?rest_route=/commonsbooking/v1/gbfs.json" \
+          -s report.json
+    - name: Assert GBFS feed is valid
+      working-directory: gbfs-validator
+      run: jq -e '.summary.hasErrors == false' report.json

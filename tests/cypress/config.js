@@ -8,6 +8,7 @@ module.exports = defineConfig({
   videosFolder: 'tests/cypress/videos',
   downloadsFolder: 'tests/cypress/downloads',
   video: false,
+  taskTimeout: 180000,
   e2e: {
     baseUrl: 'http://localhost:1001/',
     specPattern: 'tests/cypress/e2e/**/*.test.{js,jsx,ts,tsx}',
