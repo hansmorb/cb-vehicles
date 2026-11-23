@@ -4,7 +4,7 @@
 **Requires at least:** 5.9
 **Tested up to:** 7.0
 **Requires PHP:** 8.1
-**Stable tag:** 0.1.3
+**Stable tag:** 0.1.4
 **License:** GPLv2 or later
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,6 +47,9 @@ Run `grunt makepot`
 
 
 ## Changelog ##
+
+### 0.1.4 ###
+fix: vehicle_types.json override not applied because the route name was wrong
 
 ### 0.1.3 ###
 fix: future incoming compatiblity with CommonsBooking
