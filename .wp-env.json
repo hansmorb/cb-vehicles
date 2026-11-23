@@ -3,10 +3,17 @@
   "core": "WordPress/WordPress#6.9",
   "plugins": [
     "https://downloads.wordpress.org/plugin/commonsbooking.zip",
-    "./build/cb-vehicles"
+    "./build/cb-vehicles",
+    "https://downloads.wordpress.org/plugin/wordpress-importer.zip"
   ],
   "mappings": {
-    "wp-content/plugins/cb-vehicles": "./build/cb-vehicles"
+    "wp-content/plugins/cb-vehicles": "./build/cb-vehicles",
+    "wp-content/plugins/cb-vehicles/tests/cypress/wordpress-files": "./tests/cypress/wordpress-files"
+  },
+  "config": {
+    "WP_DEBUG": true,
+    "WP_DEBUG_LOG": true,
+    "WP_DEBUG_DISPLAY": false
   },
   "port": 1001,
   "testsEnvironment": false
